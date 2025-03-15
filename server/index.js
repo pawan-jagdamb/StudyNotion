@@ -25,8 +25,8 @@ database.connect();
  
 // console.log("serever riched") 
 const allowedOrign=[
-    'https://study-notion-frontend-ten-umber.vercel.app/',
-    'http://localhost:5173','https://study-notion-sage-one.vercel.app/'
+    'https://study-notion-frontend-ten-umber.vercel.app',
+    'http://localhost:5173','https://study-notion-sage-one.vercel.app'
 ]
 const corsOptions = {
     origin:(origin, callback)=>{
