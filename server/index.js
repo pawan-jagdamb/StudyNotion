@@ -26,7 +26,7 @@ database.connect();
 // console.log("serever riched") 
 
 const corsOptions = {
-    origin:'http://localhost:5173',// Allow only this origin
+    origin:'https://study-notion-frontend-ten-umber.vercel.app/',// Allow only this origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'],// Allowed methods
     credentials: true, // Allow cookies
 };  
