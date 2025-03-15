@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux'
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
 import { resetPassword } from '../services/operations/authAPI';
 export const UpdatePassword = () => {
-    const dispatch= useDispatch()
+    const dispatch= useDispatch();
+    const navigate= useNavigate();
     const {loading}= useSelector((state)=>state.auth);
     const [showPassword, setShowPassword]= useState(false);
     const [showConfirmPassword, setShowConfirmPassword]=useState(false);
@@ -28,7 +29,7 @@ export const UpdatePassword = () => {
         e.preventDefault();
         const token= location.pathname.split('/').at(-1); // it will take token from link which is available in rightmost part
 
-        dispatch(resetPassword(password, confirmPassword,token));
+        dispatch(resetPassword(password, confirmPassword,token,navigate));
     
     }
   return (

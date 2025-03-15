@@ -169,7 +169,7 @@ export function getPasswordResetToken( email, setEmailSent){
 
 }
 
-export function resetPassword(password, confirmPassword,token){
+export function resetPassword(password, confirmPassword,token,navigate){
 
  return async(dispatch)=>{
   dispatch(setLoading(true));
@@ -183,12 +183,12 @@ export function resetPassword(password, confirmPassword,token){
     console.log("REset password response",response);
     if(!response.data.success){
       toast.error(response.data.message);
-      // navigate("/login")
+      navigate("/login")
       throw new Error(response.data.message);
     }
     dispatch(setLoading(false))
     toast.success(response.data.message);
-    // navigate("/login")
+    navigate("/login")
     
     
   } catch (error) {
