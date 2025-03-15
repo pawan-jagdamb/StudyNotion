@@ -1,5 +1,7 @@
-
-const BASE_URL = "http://localhost:4000/api/v1"
+// import dotenv from 'dotenv'
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+// console.log("Base url",BASE_URL)
+// console.log("baser url1", import.meta.env);
 
 // AUTH ENDPOINTS
 export const endpoints = {

@@ -7,7 +7,8 @@ import { setPaymentLoading } from "../../slices/courseSlice";
 import { resetCart } from "../../slices/cartSlice";
 const {COURSE_PAYMENT_API, COURSE_VERIFY_API, SEND_PAYMENT_SUCCESS_EMAIL_API}=studentEndpoints
 
- const RAZORPAY_KEY= import.meta.env.RAZORPAY_KEY;
+ const RAZORPAY_KEY= import.meta.env.VITE_RAZORPAY_KEY;
+//  console.log("Razorpay key in student features ",RAZORPAY_KEY)
 function loadScript(src){
     return new Promise((resolve)=>{
         const script= document.createElement("script");
