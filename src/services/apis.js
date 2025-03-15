@@ -1,6 +1,6 @@
 // import dotenv from 'dotenv'
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-// console.log("Base url",BASE_URL)
+const BASE_URL = import.meta.env.VITE_BASE_URL || "https://studynotion-gat9.onrender.com/api/v1" ;
+console.log("Base url",BASE_URL)
 // console.log("baser url1", import.meta.env);
 
 // AUTH ENDPOINTS

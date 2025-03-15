@@ -24,12 +24,24 @@ const PORT = process.env.PORT||4000;
 database.connect();
  
 // console.log("serever riched") 
-
+const allowedOrign=[
+    'https://study-notion-frontend-ten-umber.vercel.app/',
+    'http://localhost:5173','https://study-notion-sage-one.vercel.app/'
+]
 const corsOptions = {
-    origin:'https://study-notion-frontend-ten-umber.vercel.app/',// Allow only this origin
+    origin:(origin, callback)=>{
+        if ( allowedOrign.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+        // console.log('oirigin',origin)
+    },// Allow only this origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'],// Allowed methods
     credentials: true, // Allow cookies
 };  
+// origin:'https://study-notion-frontend-ten-umber.vercel.app/',// Allow only this origin
+// 
 
 app.use(cors(corsOptions));
 // // middleware
